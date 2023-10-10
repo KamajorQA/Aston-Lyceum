@@ -1,0 +1,9 @@
+.header {
+  min-height: 85px;
+  background-color: seagreen;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.5rem;
+}

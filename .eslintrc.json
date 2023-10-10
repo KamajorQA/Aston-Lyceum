@@ -1,3 +1,15 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": "next/core-web-vitals",
+  "rules": {
+    "no-unused-vars": "warn",
+    "no-console": "warn",
+    "jsx-quotes": ["error", "prefer-double"],
+    "prefer-const": "error",
+    "max-len": ["warn", { "code": 120 }],
+    "semi": ["error", "always"],
+    "import/prefer-default-export": "off",
+    "curly": "error",
+    "react/jsx-no-useless-fragment": "error",
+    "no-unused-expressions": "error"
+  }
 }
