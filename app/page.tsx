@@ -3,8 +3,8 @@ import styles from './page.module.css';
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <p>My base app&nbsp;</p>
+    <section className={styles.main}>
+      <p>My Next base app&nbsp;</p>
       <div>
         <a
           href="https://github.com/KamajorQA"
@@ -16,8 +16,8 @@ export default function Home() {
             src="/icons/gitHub.svg"
             alt="GitHub link"
             className={styles.vercelLogo}
-            width={100}
-            height={24}
+            width={35}
+            height={35}
             priority
           />
         </a>
@@ -34,6 +34,6 @@ export default function Home() {
           priority
         />
       </div>
-    </main>
+    </section>
   );
 }

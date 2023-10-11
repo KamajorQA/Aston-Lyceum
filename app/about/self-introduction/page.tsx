@@ -1,6 +1,7 @@
+import Link from 'next/link';
 import s from './self.module.css';
 
-export default function AboutSelf() {
+export default function SelfIntriduction() {
   return (
     <>
       <h4>Hi, I&apos;m Anton</h4>

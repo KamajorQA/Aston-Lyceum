@@ -101,6 +101,8 @@ main {
   min-height: calc(100vh - 80px - 75px);
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
 }
 
 a {
@@ -108,8 +110,13 @@ a {
   text-decoration: none;
 }
 
-main a:hover {
-  text-decoration: inderline;
+a:hover {
+  text-decoration: underline;
+}
+
+main h1 {
+  text-align: center;
+  margin: 1rem 0;
 }
 
 .container {

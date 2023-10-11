@@ -1,0 +1,16 @@
+.label {
+  font-weight: 600;
+}
+
+.shift {
+  margin-left: 1.5rem;
+}
+
+.link {
+  color: teal;
+}
+
+.link:hover {
+  opacity: 0.8;
+  color: salmon;
+}

@@ -1,0 +1,27 @@
+.about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.details {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+}
+
+.aboutNav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.5rem;
+  border-right: 1px solid salmon;
+  min-width: 20vw;
+  align-items: flex-end;
+}
+
+.description {
+  flex: 1;
+  padding-top: 1rem;
+}
