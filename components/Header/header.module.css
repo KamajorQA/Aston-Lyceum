@@ -1,9 +1,16 @@
 .header {
-  min-height: 85px;
-  background-color: seagreen;
+  min-height: 80px;
+  background-color: rgb(182, 209, 208);
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1rem;
   font-size: 1.5rem;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+
+.header > nav {
+  display: flex;
+  gap: 1rem;
 }

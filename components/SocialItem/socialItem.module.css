@@ -1,0 +1,7 @@
+.socialIcon {
+  opacity: 0.4;
+}
+
+.socialIcon:hover {
+  opacity: 1;
+}

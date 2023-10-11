@@ -1,9 +1,21 @@
 .footer {
-  min-height: 22px;
-  background-color: seagreen;
+  min-height: 75px;
+  background-color: rgb(182, 209, 208);
   text-align: center;
+  color: teal;
+  border-top-right-radius: 1rem;
+  border-top-left-radius: 1rem;
 }
 
-.styss {
-  /* background-color: cornflowerblue; */
+.copyright {
+  padding: 0.5rem 0;
+}
+.socials {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  gap: 0.8rem;
+  list-style: none;
+  padding: 0;
 }

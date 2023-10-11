@@ -98,7 +98,7 @@ body {
 }
 
 main {
-  min-height: calc(100vh - 85px - 22px);
+  min-height: calc(100vh - 80px - 75px);
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
 }
