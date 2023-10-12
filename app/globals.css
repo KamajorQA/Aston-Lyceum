@@ -129,6 +129,11 @@ main h1 {
   color: var(--color-active);
 }
 
+.error {
+  color: salmon;
+  text-align: center;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

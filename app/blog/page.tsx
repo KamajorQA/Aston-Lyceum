@@ -14,6 +14,10 @@ async function getData() {
     },
   });
 
+  if (!response.ok) {
+    throw new Error('Server error: unable to fetch data');
+  }
+
   return response.json();
 }
 
