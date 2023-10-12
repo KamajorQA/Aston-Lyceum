@@ -1,16 +1,37 @@
 import { Metadata } from 'next';
+import Link from 'next/link';
+import s from './blog.module.css';
 
 export const metadata: Metadata = {
   title: 'Blog | My NextJS Blog',
   description: 'List of blog articles',
 };
 
-export default function Blog() {
+async function getData() {
+  const response = await fetch('https://jsonplaceholder.typicode.com/posts', {
+    next: {
+      revalidate: 60,
+    },
+  });
+
+  return response.json();
+}
+
+export default async function Blog() {
+  const posts = await getData();
+
   return (
-    <h1>
-      <div>Lorem ipsum dolor sit amet.</div>
-      <div>Est ea iste dolorem natus.</div>
-      <div>Recusandae pariatur asperiores totam tempore.</div>
-    </h1>
+    <>
+      <h1>Blog posts</h1>
+      <section className={s.content}>
+        {posts.map((post: any) => {
+          return (
+            <li key={post.id}>
+              <Link href={`/blog/${post.id}`}>{post.title}</Link>
+            </li>
+          );
+        })}
+      </section>
+    </>
   );
 }

@@ -1,0 +1,18 @@
+.content li {
+  list-style-type: clef;
+}
+
+@counter-style clef {
+  system: cyclic;
+  symbols: '\1D11E';
+  suffix: ' \227B  ';
+}
+
+.content a {
+  transition: all 400ms ease-in;
+}
+
+.content a:hover {
+  opacity: 0.8;
+  color: teal;
+}
