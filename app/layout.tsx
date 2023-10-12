@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Inter, El_Messiri } from 'next/font/google';
+import { El_Messiri } from 'next/font/google';
 import { Header } from '@/components/Header/Header';
 import { Footer } from '@/components/Footer/Footer';
 import './globals.css';

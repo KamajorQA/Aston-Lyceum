@@ -1,4 +1,10 @@
+import { Metadata } from 'next';
 import s from './self.module.css';
+
+export const metadata: Metadata = {
+  title: 'About me',
+  description: 'About me',
+};
 
 export default function AboutSelf() {
   return (

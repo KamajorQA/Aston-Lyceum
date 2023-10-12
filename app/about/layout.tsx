@@ -1,5 +1,11 @@
 import Link from 'next/link';
+import { Metadata } from 'next';
 import s from './about.module.css';
+
+export const metadata: Metadata = {
+  title: 'About | My NextJS Blog',
+  description: 'About page Next App',
+};
 
 export default function AboutLayout({
   children,

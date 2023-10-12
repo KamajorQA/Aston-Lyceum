@@ -1,3 +1,10 @@
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'My stack',
+  description: 'Current stack page',
+};
+
 export default function Stack() {
   return (
     <>

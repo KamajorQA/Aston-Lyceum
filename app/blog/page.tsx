@@ -1,3 +1,10 @@
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Blog | My NextJS Blog',
+  description: 'List of blog articles',
+};
+
 export default function Blog() {
   return (
     <h1>

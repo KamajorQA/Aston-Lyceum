@@ -1,4 +1,10 @@
+import { Metadata } from 'next';
 import s from './contacts.module.css';
+
+export const metadata: Metadata = {
+  title: 'My contacts',
+  description: 'Contacts page',
+};
 
 export default function Contacts() {
   return (
