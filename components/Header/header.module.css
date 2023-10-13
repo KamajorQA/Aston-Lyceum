@@ -9,12 +9,3 @@
   border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 1rem;
 }
-
-.header > nav {
-  display: flex;
-  gap: 1rem;
-}
-
-.header a {
-  color: teal;
-}
