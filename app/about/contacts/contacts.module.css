@@ -12,5 +12,5 @@
 
 .link:hover {
   opacity: 0.8;
-  color: salmon;
+  color: var(--color-active);
 }

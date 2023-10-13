@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import { getAllPosts } from '@/services/getPosts';
 import s from './blog.module.css';
 
 export const metadata: Metadata = {
@@ -7,22 +8,8 @@ export const metadata: Metadata = {
   description: 'List of blog articles',
 };
 
-async function getData() {
-  const response = await fetch('https://jsonplaceholder.typicode.com/posts', {
-    next: {
-      revalidate: 60,
-    },
-  });
-
-  if (!response.ok) {
-    throw new Error('Server error: unable to fetch data');
-  }
-
-  return response.json();
-}
-
 export default async function Blog() {
-  const posts = await getData();
+  const posts = await getAllPosts();
 
   return (
     <>

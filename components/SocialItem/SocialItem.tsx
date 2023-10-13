@@ -11,7 +11,13 @@ function SocialItem({ href, imgSrc, alt }: ISocialItemProps) {
   return (
     <li>
       <a href={href} target="_blank" rel="noreferrer">
-        <Image src={imgSrc} alt={alt} className={s.socialIcon} height={25} />
+        <Image
+          src={imgSrc}
+          alt={alt}
+          className={s.socialIcon}
+          height={25}
+          priority
+        />
       </a>
     </li>
   );

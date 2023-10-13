@@ -1,21 +1,5 @@
+import { getSinglePostData } from '@/services/getPosts';
 import { Metadata } from 'next';
-
-async function getData(id: string) {
-  const response = await fetch(
-    `https://jsonplaceholder.typicode.com/posts/${id}`,
-    {
-      next: {
-        revalidate: 60,
-      },
-    }
-  );
-
-  if (!response.ok) {
-    throw new Error('Server error: unable to fetch data');
-  }
-
-  return response.json();
-}
 
 type Props = {
   params: {
@@ -26,7 +10,7 @@ type Props = {
 export async function generateMetadata({
   params: { id },
 }: Props): Promise<Metadata> {
-  const post = await getData(id);
+  const post = await getSinglePostData(id);
 
   return {
     title: post.title,
@@ -35,7 +19,7 @@ export async function generateMetadata({
 }
 
 export default async function Post({ params: { id } }: Props) {
-  const post = await getData(id);
+  const post = await getSinglePostData(id);
 
   return (
     <article>

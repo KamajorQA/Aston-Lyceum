@@ -1,14 +1,16 @@
-import Link from 'next/link';
+import { Navigation } from '../Navigation/Navigation';
 import s from './header.module.css';
+
+const navItems = [
+  { label: 'Home', href: '/' },
+  { label: 'Blog', href: '/blog' },
+  { label: 'About', href: '/about' },
+];
 
 function Header() {
   return (
     <header className={`container ${s.header}`}>
-      <nav>
-        <Link href="/">Home</Link>
-        <Link href="/blog">Blog</Link>
-        <Link href="/about">About</Link>
-      </nav>
+      <Navigation navLinks={navItems} />
     </header>
   );
 }
