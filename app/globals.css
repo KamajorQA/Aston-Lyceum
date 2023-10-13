@@ -9,7 +9,7 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 
-  --color-active: red;
+  --color-active: salmon;
 
   --primary-glow: conic-gradient(
     from 180deg at 50% 50%,
@@ -130,7 +130,7 @@ main h1 {
 }
 
 .error {
-  color: salmon;
+  color: var(--color-active);
   text-align: center;
 }
 
