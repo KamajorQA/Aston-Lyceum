@@ -125,7 +125,7 @@ main h1 {
   margin: 0 auto;
 }
 
-a.active,
+header a.active,
 .active {
   color: var(--color-active);
 }
