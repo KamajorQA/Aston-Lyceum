@@ -2,6 +2,7 @@
 
 import { getPostsBySearch } from '@/services/getPosts';
 import { FormEventHandler, ChangeEventHandler, useState } from 'react';
+import s from './search.module.css';
 
 type Props = {
   onSearch: (value: any[]) => void;
@@ -25,7 +26,7 @@ function Search({ onSearch }: Props) {
   };
 
   return (
-    <form onSubmit={handleSubmitSearch}>
+    <form onSubmit={handleSubmitSearch} className={s.searchForm}>
       <input
         type="search"
         placeholder="введите текст запроса..."

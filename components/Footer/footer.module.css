@@ -1,6 +1,6 @@
 .footer {
   min-height: 75px;
-  background-color: rgb(182, 209, 208);
+  background-color: var(--accent-bg-color);
   text-align: center;
   color: teal;
   border-top-right-radius: 1rem;
