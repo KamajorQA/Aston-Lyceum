@@ -1,24 +1,27 @@
 'use client';
-
-import { getPostsBySearch } from '@/services/getPosts';
 import { FormEventHandler, ChangeEventHandler, useState } from 'react';
+import { Audio } from 'react-loader-spinner';
+import { getPostsBySearch } from '@/services/getPosts';
+import { useAppDispatch } from '@/services/reduxHooks';
+import { setPosts } from '@/redux/slices/postsSlice';
 import s from './search.module.css';
 
-type Props = {
-  onSearch: (value: any[]) => void;
-};
-
-function Search({ onSearch }: Props) {
+function Search() {
   const [searchQuery, setSearchQuery] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+
+  const dispatch = useAppDispatch();
 
   const handleSubmitSearch: FormEventHandler<HTMLFormElement> = async (
     event
   ) => {
     event.preventDefault();
 
+    setIsLoading(true);
     const posts = await getPostsBySearch(searchQuery);
 
-    onSearch(posts);
+    dispatch(setPosts(posts));
+    setIsLoading(false);
   };
 
   const handleSearchInput: ChangeEventHandler<HTMLInputElement> = (e) => {
@@ -33,7 +36,19 @@ function Search({ onSearch }: Props) {
         value={searchQuery}
         onChange={handleSearchInput}
       />
-      <button type="submit">Поиск</button>
+      <button type="submit">
+        {!!isLoading ? (
+          <Audio
+            height="15"
+            width="37"
+            color="#fff"
+            ariaLabel="audio-loading"
+            visible={true}
+          />
+        ) : (
+          'Поиск'
+        )}
+      </button>
     </form>
   );
 }

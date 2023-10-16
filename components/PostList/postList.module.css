@@ -16,3 +16,7 @@
   opacity: 0.8;
   color: teal;
 }
+
+.content h2 {
+  text-align: center;
+}

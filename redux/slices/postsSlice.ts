@@ -13,7 +13,9 @@ type PostsState = {
   posts: Post[];
 };
 
-const initialState: PostsState = { posts: [] };
+const initialState: PostsState = {
+  posts: [],
+};
 
 const postsSlice = createSlice({
   name: 'posts',
@@ -27,5 +29,7 @@ const postsSlice = createSlice({
     },
   },
 });
+
+export const { setPosts } = postsSlice.actions;
 
 export const postsReducer = postsSlice.reducer;
