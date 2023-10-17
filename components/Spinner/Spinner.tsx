@@ -2,10 +2,19 @@
 import { Dna } from 'react-loader-spinner';
 import s from './spinner.module.css';
 
-function Spinner() {
+type Props = {
+  height: string;
+  width: string;
+};
+function Spinner({ height, width }: Props) {
   return (
     <section className={s.preloadContainer}>
-      <Dna visible={true} height="80" width="80" ariaLabel="dna-loading" />
+      <Dna
+        visible={true}
+        height={height}
+        width={width}
+        ariaLabel="dna-loading"
+      />
     </section>
   );
 }

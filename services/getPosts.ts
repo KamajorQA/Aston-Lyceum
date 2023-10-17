@@ -1,5 +1,7 @@
+const baseUrl = 'https://jsonplaceholder.typicode.com/posts';
+
 async function getAllPosts() {
-  const response = await fetch('https://jsonplaceholder.typicode.com/posts', {
+  const response = await fetch(baseUrl, {
     next: {
       revalidate: 60,
     },
@@ -13,14 +15,11 @@ async function getAllPosts() {
 }
 
 async function getSinglePostData(id: string) {
-  const response = await fetch(
-    `https://jsonplaceholder.typicode.com/posts/${id}`,
-    {
-      next: {
-        revalidate: 60,
-      },
-    }
-  );
+  const response = await fetch(`${baseUrl}/${id}`, {
+    next: {
+      revalidate: 60,
+    },
+  });
 
   if (!response.ok) {
     throw new Error(`Server error: unable to fetch post #${id} data`);
@@ -29,4 +28,14 @@ async function getSinglePostData(id: string) {
   return response.json();
 }
 
-export { getAllPosts, getSinglePostData };
+const getPostsBySearch = async (searchQuery: string) => {
+  const response = await fetch(`${baseUrl}?q=${searchQuery}`);
+
+  if (!response.ok) {
+    throw new Error('Server error: unable to fetch requested posts');
+  }
+
+  return response.json();
+};
+
+export { getAllPosts, getSinglePostData, getPostsBySearch };
