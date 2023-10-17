@@ -14,16 +14,6 @@ function PostList() {
 
   const dispatch = useAppDispatch();
 
-  // useEffect(() => {
-  //   async function fetchData() {
-  //     setIsLoading(true);
-  //     const posts = await getAllPosts();
-  //     dispatch(setPosts(posts));
-  //     setIsLoading(false);
-  //   }
-  //   fetchData();
-  // }, [dispatch]);
-
   useEffect(() => {
     setIsLoading(true);
     getAllPosts()

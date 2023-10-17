@@ -1,16 +1,39 @@
 'use client';
-import { FormEventHandler, ChangeEventHandler, useState } from 'react';
+import {
+  FormEventHandler,
+  ChangeEventHandler,
+  useState,
+  useEffect,
+  useCallback,
+} from 'react';
 import { Audio } from 'react-loader-spinner';
 import { getPostsBySearch } from '@/services/getPosts';
 import { useAppDispatch } from '@/services/reduxHooks';
 import { setPosts } from '@/redux/slices/postsSlice';
+import { useDebounce } from '@/services/useDebounce';
 import s from './search.module.css';
 
 function Search() {
   const [searchQuery, setSearchQuery] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
+  const debounceSearchQuery = useDebounce(searchQuery, 500);
+
   const dispatch = useAppDispatch();
+
+  const handleDebounceRequest = useCallback(async () => {
+    if (debounceSearchQuery.length > 2) {
+      setIsLoading(true);
+      const posts = await getPostsBySearch(debounceSearchQuery);
+
+      dispatch(setPosts(posts));
+      setIsLoading(false);
+    }
+  }, [dispatch, debounceSearchQuery]);
+
+  useEffect(() => {
+    handleDebounceRequest();
+  }, [debounceSearchQuery, handleDebounceRequest]);
 
   const handleSubmitSearch: FormEventHandler<HTMLFormElement> = async (
     event
