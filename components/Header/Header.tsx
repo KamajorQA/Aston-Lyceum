@@ -1,3 +1,4 @@
+import { LogInOut } from '../LogInOut/LogInOut';
 import { Navigation } from '../Navigation/Navigation';
 import s from './header.module.css';
 
@@ -11,6 +12,7 @@ function Header() {
   return (
     <header className={`container ${s.header}`}>
       <Navigation navLinks={navItems} styleClass={'wrapper'} />
+      <LogInOut />
     </header>
   );
 }

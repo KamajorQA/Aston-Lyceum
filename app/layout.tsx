@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { El_Messiri } from 'next/font/google';
 import { ReduxProvider } from '@/redux/ReduxProvider';
+import Providers from '@/components/Providers';
 import { Header } from '@/components/Header/Header';
 import { Footer } from '@/components/Footer/Footer';
 import './globals.css';
@@ -20,11 +21,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={messiri.className}>
-        <Header />
-        <main className="container">
-          <ReduxProvider>{children}</ReduxProvider>
-        </main>
-        <Footer />
+        <Providers>
+          <Header />
+          <main className="container">
+            <ReduxProvider>{children}</ReduxProvider>
+          </main>
+          <Footer />
+        </Providers>
       </body>
     </html>
   );

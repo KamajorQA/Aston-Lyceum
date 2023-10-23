@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { Metadata } from 'next';
 import s from './about.module.css';
 import { Navigation } from '@/components/Navigation/Navigation';
