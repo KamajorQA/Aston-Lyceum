@@ -10,13 +10,14 @@ type NavLink = {
 
 type Props = {
   navLinks: NavLink[];
+  styleClass: string;
 };
 
-function Navigation({ navLinks }: Props) {
+function Navigation({ navLinks, styleClass }: Props) {
   const pathname = usePathname();
 
   return (
-    <nav className={s.wrapper}>
+    <nav className={s[styleClass]}>
       {navLinks.map((link) => {
         const isActive = pathname === link.href;
         const linkClassName = isActive ? 'active' : '';

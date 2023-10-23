@@ -10,7 +10,7 @@ const navItems = [
 function Header() {
   return (
     <header className={`container ${s.header}`}>
-      <Navigation navLinks={navItems} />
+      <Navigation navLinks={navItems} styleClass={'wrapper'} />
     </header>
   );
 }
