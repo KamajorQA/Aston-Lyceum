@@ -1,0 +1,61 @@
+.wrapper {
+  /* margin-left: auto; */
+  position: relative;
+  position: absolute;
+  right: 1rem;
+  color: teal;
+}
+
+.wrapper a:hover {
+  color: var(--color-active);
+}
+
+.userInfo {
+  position: relative;
+  /* display: inline-block; */
+  text-align: center;
+}
+
+.userAvatar {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.exitButton {
+  color: var(--text-main-color);
+  cursor: pointer;
+  transition: all 0.2s linear;
+}
+
+.exitButton:hover {
+  color: var(--primary-color);
+}
+
+.dropdownContent {
+  display: none;
+  position: absolute;
+  right: 0;
+  z-index: 1;
+  background-color: var(--accent-bg-color);
+  box-shadow: 0 1px 8px 0px #000a;
+  /* box-shadow: 0 1px 8px 0px #fffa; */
+  border-radius: 8px;
+  padding: 0 0.3rem 0.1rem;
+}
+
+.dropdownContent a {
+  color: var(--text-main-color);
+  cursor: pointer;
+  transition: all 0.2s linear;
+  display: block;
+}
+
+/* .dropdownContent a:hover {
+  color: var(--color-active);
+} */
+
+.userInfo:hover .dropdownContent {
+  display: block;
+}
