@@ -1,6 +1,12 @@
-import { authConfig } from '@/configs/auth';
+import { Metadata } from 'next';
 import { getServerSession } from 'next-auth/next';
+import { authConfig } from '@/configs/auth';
 import s from './profile.module.css';
+
+export const metadata: Metadata = {
+  title: 'Profile | My NextJS Blog',
+  description: 'User profile page',
+};
 
 export default async function ProfilePage() {
   const session = await getServerSession(authConfig);

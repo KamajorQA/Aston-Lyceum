@@ -58,10 +58,6 @@
   display: block;
 }
 
-/* .dropdownContent a:hover {
-  color: var(--color-active);
-} */
-
 .userInfo:hover .dropdownContent {
   display: block;
 }

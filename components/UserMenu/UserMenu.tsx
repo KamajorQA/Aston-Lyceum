@@ -10,9 +10,6 @@ function UserMenu() {
     signOut({ callbackUrl: '/' });
   };
 
-  console.log(session);
-  console.log('Image >>', session.data?.user?.image);
-
   return (
     <div className={s.wrapper}>
       {session?.data ? (
@@ -28,7 +25,6 @@ function UserMenu() {
           )}
           <div className={s.dropdownContent}>
             <Link href="/profile">Profile</Link>
-            {/* <Link href="#">Favorites</Link> */}
             <Link className={s.exitButton} href="#" onClick={logOut}>
               Sign&nbsp;Out
             </Link>
