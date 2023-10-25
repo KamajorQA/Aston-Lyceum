@@ -2,13 +2,23 @@
 import { useSession, signOut } from 'next-auth/react';
 import s from './userMenu.module.css';
 import Link from 'next/link';
+import { Spinner } from '../Spinner/Spinner';
 
 function UserMenu() {
   const session = useSession();
+  console.log('123', session);
 
   const logOut = () => {
     signOut({ callbackUrl: '/' });
   };
+
+  if (session.status === 'loading') {
+    return (
+      <div className={s.wrapper}>
+        <Spinner height={'45'} width={'45'} />
+      </div>
+    );
+  }
 
   return (
     <div className={s.wrapper}>
@@ -19,7 +29,7 @@ function UserMenu() {
           {session.data.user?.image && (
             <img
               src={session.data.user?.image}
-              alt="User Avatar"
+              alt=""
               className={s.userAvatar}
             ></img>
           )}
