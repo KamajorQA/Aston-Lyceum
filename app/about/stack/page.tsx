@@ -13,7 +13,7 @@ export default function Stack() {
         JavaScript, TypeScript, React, Redux Toolkit, RTK Query, Firebase,
         Next.js
       </p>
-      <p>CSS Modules, SCSS, Tailwind, AntDesign</p>
+      <p>CSS Modules, SCSS, Tailwind, AntDesign, Framer Motion</p>
       <p>Jest, NPM, GitHub Actions</p>
     </>
   );
