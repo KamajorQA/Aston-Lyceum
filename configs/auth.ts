@@ -1,6 +1,8 @@
-import { AuthOptions } from 'next-auth';
+import { AuthOptions, User } from 'next-auth';
 import GoogleProvider from 'next-auth/providers/google';
 import GithubProvider from 'next-auth/providers/github';
+import Credentials from 'next-auth/providers/credentials';
+import { users } from '@/data/users';
 
 const authConfig: AuthOptions = {
   providers: [
@@ -11,6 +13,29 @@ const authConfig: AuthOptions = {
     GithubProvider({
       clientId: process.env.GITHUB_CLIENT_ID!,
       clientSecret: process.env.GITHUB_SECRET!,
+    }),
+    Credentials({
+      credentials: {
+        email: { label: 'Email', type: 'email', required: true },
+        password: { label: 'Password', type: 'password', required: true },
+      },
+      async authorize(credentials) {
+        if (!credentials?.email || !credentials.password) {
+          return null;
+        }
+
+        const currentUser = users.find(
+          (user) => user.email === credentials.email
+        );
+
+        if (currentUser && currentUser.password === credentials.password) {
+          // eslint-disable-next-line no-unused-vars
+          const { password, ...userWithoutPass } = currentUser;
+          return userWithoutPass as User;
+        }
+
+        return null;
+      },
     }),
   ],
 };

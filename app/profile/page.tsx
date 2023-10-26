@@ -13,7 +13,7 @@ export default async function ProfilePage() {
 
   return (
     <section className={s.wrapper}>
-      <h1>Profile page</h1>
+      <h1>Profile info</h1>
       <article className={s.item}>
         You are now logged in as:
         <h2>{session?.user?.name}</h2>

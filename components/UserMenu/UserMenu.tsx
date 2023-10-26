@@ -1,12 +1,11 @@
 'use client';
-import { useSession, signOut } from 'next-auth/react';
-import s from './userMenu.module.css';
 import Link from 'next/link';
+import { useSession, signOut } from 'next-auth/react';
 import { Spinner } from '../Spinner/Spinner';
+import s from './userMenu.module.css';
 
 function UserMenu() {
   const session = useSession();
-  console.log('123', session);
 
   const logOut = () => {
     signOut({ callbackUrl: '/' });

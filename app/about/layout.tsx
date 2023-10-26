@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
-import s from './about.module.css';
 import { Navigation } from '@/components/Navigation/Navigation';
+import s from './about.module.css';
 
 export const metadata: Metadata = {
   title: 'About | My NextJS Blog',
