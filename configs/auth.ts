@@ -38,6 +38,9 @@ const authConfig: AuthOptions = {
       },
     }),
   ],
+  pages: {
+    // signIn: '/signin',
+  },
 };
 
 export { authConfig };
