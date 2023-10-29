@@ -4,7 +4,7 @@
 }
 
 .wrapper a {
-  color: teal;
+  color: var(--color-primary);
 }
 
 .aboutNav {

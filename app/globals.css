@@ -11,6 +11,7 @@
 
   --color-active: salmon;
   --accent-bg-color: rgb(182, 209, 208);
+  --color-primary: teal;
 
   --primary-glow: conic-gradient(
     from 180deg at 50% 50%,

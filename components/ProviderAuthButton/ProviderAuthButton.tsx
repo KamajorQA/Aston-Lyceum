@@ -3,6 +3,7 @@ import { MouseEventHandler } from 'react';
 import { signIn } from 'next-auth/react';
 import { useSearchParams } from 'next/navigation';
 import Image from 'next/image';
+import s from './providerAuthButton.module.css';
 
 type Props = {
   provider: string;
@@ -20,12 +21,12 @@ function ProviderAuthButton({ provider, iconSrc }: Props) {
   };
 
   return (
-    <button onClick={handleAuth}>
+    <button onClick={handleAuth} className={s.authButton}>
       <Image
         src={iconSrc}
         alt={`${provider} link`}
-        width={35}
-        height={35}
+        width={30}
+        height={30}
         priority
       />
       <span>Sign in with {provider}</span>

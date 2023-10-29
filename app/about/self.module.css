@@ -1,4 +1,4 @@
 .link {
-  color: teal;
+  color: var(--color-primary);
   font-weight: 600;
 }
