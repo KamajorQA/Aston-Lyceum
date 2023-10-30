@@ -1,7 +1,7 @@
-import { ProviderAuthButton } from '@/components/ProviderAuthButton/ProviderAuthButton';
 import { Metadata } from 'next';
-import s from './signin.module.css';
+import { ProviderAuthButton } from '@/components/ProviderAuthButton/ProviderAuthButton';
 import { CredentialsAuthForm } from '@/components/CredentialsAuthForm/CredentialsAuthForm';
+import s from './signin.module.css';
 
 export const metadata: Metadata = {
   title: 'Login | My NextJS Blog',

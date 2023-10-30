@@ -39,7 +39,7 @@ const authConfig: AuthOptions = {
     }),
   ],
   pages: {
-    // signIn: '/signin',
+    signIn: '/signin',
   },
 };
 

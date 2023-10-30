@@ -16,7 +16,7 @@
   border: 0;
   border-top: 1px solid var(--color-primary);
   overflow: visible;
-  margin: 1rem 0.5rem;
+  margin: 1.5rem 0.5rem 0 0.5rem;
   display: block;
   text-align: center;
   font-size: 1rem;
@@ -25,7 +25,7 @@
 .divider::before {
   content: 'or';
   position: relative;
-  top: -0.7rem;
+  top: -0.75rem;
   color: var(--color-primary);
   padding: 0 0.4rem;
   background-color: var(--accent-bg-color);
