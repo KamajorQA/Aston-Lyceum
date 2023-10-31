@@ -1,11 +1,13 @@
 'use client';
 import type { FormEventHandler } from 'react';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { signIn } from 'next-auth/react';
 import s from './credentialsAuthForm.module.css';
 
 function CredentialsAuthForm() {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const callbackUrl = searchParams.get('callbackUrl') || '/profile';
 
   const handleSubmitAuthForm: FormEventHandler<HTMLFormElement> = async (
     event
@@ -21,9 +23,10 @@ function CredentialsAuthForm() {
     });
 
     if (!!res && !res.error) {
-      router.push('/profile');
+      router.push(callbackUrl);
+      setTimeout(() => window.location.reload(), 300);
     } else {
-      console.log(res);
+      console.log(res, res?.status);
     }
   };
 
