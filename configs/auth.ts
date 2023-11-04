@@ -1,8 +1,7 @@
-import { AuthOptions, User } from 'next-auth';
+import { AuthOptions } from 'next-auth';
 import GoogleProvider from 'next-auth/providers/google';
 import GithubProvider from 'next-auth/providers/github';
 import Credentials from 'next-auth/providers/credentials';
-import { users } from '@/data/users';
 
 const authConfig: AuthOptions = {
   providers: [
@@ -20,21 +19,32 @@ const authConfig: AuthOptions = {
         password: { label: 'Password', type: 'password', required: true },
       },
       async authorize(credentials) {
+        // проверка на наличие введенной пары логин/пароль
+        // возврат null означает, что авторизация не осуществлена
         if (!credentials?.email || !credentials.password) {
           return null;
         }
 
-        const currentUser = users.find(
-          (user) => user.email === credentials.email
-        );
+        // логика  поиска юзера по переданным credentials
+        const response = await fetch('/api/login', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            email: credentials.email,
+            password: credentials.password,
+          }),
+        });
 
-        if (currentUser && currentUser.password === credentials.password) {
-          // eslint-disable-next-line no-unused-vars
-          const { password, ...userWithoutPass } = currentUser;
-          return userWithoutPass as User;
+        const user = await response.json();
+
+        if (!!user) {
+          // любой возвращаемый объект сохраняется в свойство 'user' в JWT
+          return user;
+        } else {
+          return null;
         }
-
-        return null;
       },
     }),
   ],
