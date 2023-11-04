@@ -1,13 +1,13 @@
 import prisma from '@/data/prisma';
 import * as bcrypt from 'bcrypt';
 
-interface RequestBody {
+interface IRequestBody {
   email: string;
   password: string;
 }
 
 export async function POST(request: Request) {
-  const body: RequestBody = await request.json();
+  const body: IRequestBody = await request.json();
 
   const currentUser = await prisma.user.findFirst({
     where: {

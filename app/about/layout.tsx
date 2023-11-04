@@ -3,8 +3,8 @@ import { Navigation } from '@/components/Navigation/Navigation';
 import s from './about.module.css';
 
 export const metadata: Metadata = {
-  title: 'About | My NextJS Blog',
-  description: 'About page Next App',
+  title: 'About | Aston Lyceum',
+  description: "Info about project's author",
 };
 
 const navItems = [
@@ -20,7 +20,7 @@ export default function AboutLayout({
 }) {
   return (
     <section className={s.about}>
-      <h1>About me</h1>
+      <h1>About author</h1>
       <section className={s.details}>
         <Navigation navLinks={navItems} styleClass={'aboutNav'} />
         <article className={s.description}>{children}</article>

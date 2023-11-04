@@ -9,8 +9,8 @@ import './globals.css';
 const messiri = El_Messiri({ subsets: ['latin', 'cyrillic'] });
 
 export const metadata: Metadata = {
-  title: 'My NextJS Blog',
-  description: 'Base Next App',
+  title: 'Aston Lyceum',
+  description: 'Lyceum and set of instructions for devs & QA specialists',
 };
 
 export default function RootLayout({

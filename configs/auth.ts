@@ -1,4 +1,4 @@
-import { AuthOptions } from 'next-auth';
+import { AuthOptions, User } from 'next-auth';
 import GoogleProvider from 'next-auth/providers/google';
 import GithubProvider from 'next-auth/providers/github';
 import Credentials from 'next-auth/providers/credentials';
@@ -37,7 +37,7 @@ const authConfig: AuthOptions = {
           }),
         });
 
-        const user = await response.json();
+        const user: User = await response.json();
 
         if (!!user) {
           // любой возвращаемый объект сохраняется в свойство 'user' в JWT

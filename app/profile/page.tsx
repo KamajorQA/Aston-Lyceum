@@ -4,7 +4,7 @@ import { authConfig } from '@/configs/auth';
 import s from './profile.module.css';
 
 export const metadata: Metadata = {
-  title: 'Profile | My NextJS Blog',
+  title: 'Profile | Aston Lyceum',
   description: 'User profile page',
 };
 

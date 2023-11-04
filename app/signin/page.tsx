@@ -4,7 +4,7 @@ import { CredentialsAuthForm } from '@/components/CredentialsAuthForm/Credential
 import s from './signin.module.css';
 
 export const metadata: Metadata = {
-  title: 'Login | My NextJS Blog',
+  title: 'Login | Aston Lyceum',
   description: 'Sign in page with available login options',
 };
 
