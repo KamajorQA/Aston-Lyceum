@@ -1,5 +1,5 @@
 'use client';
-import type { FormEventHandler } from 'react';
+import { useState, type FormEventHandler } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { signIn } from 'next-auth/react';
 import s from './credentialsAuthForm.module.css';
@@ -8,11 +8,13 @@ function CredentialsAuthForm() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const callbackUrl = searchParams.get('callbackUrl') || '/profile';
+  const [error, setError] = useState('');
 
   const handleSubmitAuthForm: FormEventHandler<HTMLFormElement> = async (
     event
   ) => {
     event.preventDefault();
+    setError('');
 
     const formData = new FormData(event.currentTarget);
 
@@ -26,7 +28,11 @@ function CredentialsAuthForm() {
       router.push(callbackUrl);
       setTimeout(() => window.location.reload(), 300);
     } else {
-      console.log(res, res?.status);
+      const errMessage =
+        res?.status === 401
+          ? `Введены неверные логин/пароль`
+          : `Ошибка ${res?.status}`;
+      setError(errMessage);
     }
   };
 
@@ -34,6 +40,7 @@ function CredentialsAuthForm() {
     <form className={s.form} onSubmit={handleSubmitAuthForm}>
       <input type="email" name="email" required placeholder="Email" />
       <input type="password" name="password" required placeholder="Password" />
+      {!!error && <p className={`error ${s.authError}`}>{error}</p>}
       <button type="submit">Sign in with Credentials</button>
     </form>
   );

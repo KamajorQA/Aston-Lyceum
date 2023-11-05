@@ -9,10 +9,10 @@ export const metadata: Metadata = {
 
 export default function Auditorium() {
   return (
-    <>
+    <section>
       <h1>Instruction posts</h1>
       <Search />
       <PostList />
-    </>
+    </section>
   );
 }

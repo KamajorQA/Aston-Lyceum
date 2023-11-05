@@ -17,6 +17,7 @@
     "bcrypt": "^5.1.0",
     "eslint": "8.51.0",
     "eslint-config-next": "13.5.4",
+    "jsonwebtoken": "^9.0.2",
     "next": "13.5.4",
     "next-auth": "^4.24.3",
     "react": "18.2.0",
@@ -27,6 +28,7 @@
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.1",
+    "@types/jsonwebtoken": "^9.0.4",
     "check-dependencies": "^1.1.0",
     "prisma": "^5.5.2"
   }

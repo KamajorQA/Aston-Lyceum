@@ -1,5 +1,5 @@
 import * as bcrypt from 'bcrypt';
-import prisma from '@/data/prisma';
+import prisma from '@/lib/prisma';
 
 interface IRequestBody {
   name: string;
