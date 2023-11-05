@@ -26,7 +26,7 @@ const authConfig: AuthOptions = {
         }
 
         // логика  поиска юзера по переданным credentials
-        const response = await fetch('/api/login', {
+        const response = await fetch('http://localhost:3000/api/login', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -50,6 +50,9 @@ const authConfig: AuthOptions = {
   ],
   pages: {
     signIn: '/signin',
+  },
+  session: {
+    maxAge: 432000,
   },
 };
 
