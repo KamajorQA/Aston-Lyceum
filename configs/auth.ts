@@ -2,6 +2,7 @@ import { AuthOptions, User } from 'next-auth';
 import GoogleProvider from 'next-auth/providers/google';
 import GithubProvider from 'next-auth/providers/github';
 import Credentials from 'next-auth/providers/credentials';
+import { Session } from 'inspector';
 
 const authConfig: AuthOptions = {
   providers: [
@@ -53,6 +54,16 @@ const authConfig: AuthOptions = {
   },
   session: {
     maxAge: 432000,
+  },
+  callbacks: {
+    async jwt({ token, user }) {
+      return { ...token, ...user };
+    },
+
+    async session({ session, token }) {
+      session.user = token as any;
+      return session;
+    },
   },
 };
 
