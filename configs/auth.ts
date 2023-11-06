@@ -55,6 +55,7 @@ const authConfig: AuthOptions = {
   session: {
     maxAge: 432000,
   },
+  secret: process.env.NEXTAUTH_SECRET,
   callbacks: {
     async jwt({ token, user }) {
       return { ...token, ...user };
