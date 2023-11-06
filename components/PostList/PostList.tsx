@@ -41,7 +41,7 @@ function PostList() {
       {postList.map((post: any) => {
         return (
           <li key={post.id}>
-            <Link href={`/blog/${post.id}`}>{post.title}</Link>
+            <Link href={`/auditorium/${post.id}`}>{post.title}</Link>
           </li>
         );
       })}

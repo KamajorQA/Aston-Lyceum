@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   gap: 0.4rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .searchForm button {
@@ -12,7 +12,7 @@
   border: none;
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
-  background-color: teal;
+  background-color: var(--color-primary);
   transition: all 400ms ease-in;
 }
 

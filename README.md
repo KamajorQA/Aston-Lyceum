@@ -1,34 +1,113 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Список инструкций по настройке окружения фронта для тестирования рабочих проектов MQA-специалистами компании Aston.
 
-## Getting Started
+## Стек проекта: Next.js, React, Typescript, RTK, CSS Modules, SQLite, Prisma, bcrypt.
 
-First, run the development server:
+**_Fullstack SPA-проект получения с удаленного сервера и отображения списка инструкций на фреймворке Next.js v.13 и базе данных sqlite управляемой через ORM Prisma с аутентификацией по JWT_**
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+---
+
+### Использован шаблон [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app)
+
+Для первичной инициализации проекта в его директории сперва нужно установить зависимости с помощью команды:
+
+```sh
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Для локального запуска проекта нужно использовать команду
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```sh
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Автоматический деплой реализован на Vercel.
 
-## Learn More
+**_Ссылка на продакшн стенд: [next-base-app](https://next-base-app-wine.vercel.app/)_**
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## В проекте использованы библиотеки
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- [x] Typescript;
+- [x] Redux Toolkit;
+- [x] Auth.js;
+- [x] Prisma;
+- [x] bcrypt;
+- [x] jsonwebtoken;
+- [x] react-loader-spinner;
 
-## Deploy on Vercel
+Страницы проекта являются _**серверными компонентами**_ с передаваемой **meta**-информацией для **SEO**-оптимизации.  
+Интерактивное взаимодействие передано во вложенные _**клиентские компоненты**_.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+В проекте реализованы страницы **Home** / **Auditorium** / **Sign In** / **Profile** / **About**.  
+Страница **Not Found** генерируется автоматически Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+На странице отображения всех постов также реализован **поиск** через query-запрос на сервер, вызываемый в клиентском компоненте `Search`. В реализации поиска использован **Debounce** - поиск триггерится и при сабмите по энтеру/клику, и при прекращении ввода после заданной задержки в `useDebounce`.
+Триггер поиска по вводу ограничен длинной запроса _более двух_ символов.
+
+### Аутентификация
+
+**Аутентификация** производится согласно протоколу OAuth на выбор через провайдеров **Google** или **Github**. Также доступна атуентификация через `Credentials` (по паре логин/пароль).
+
+Для аутентификации используется библиотека `Auth.js`.  
+**_Ключи (переменные) для настройки окружения и конфигурации аутентификации NextAuth хранятся локально и отсутствуют в репозитории. Необходим файл .env.local_**
+
+### Бэкенд
+
+В качестве базы данных использована **СУБД SQLite**.  
+Для доступа к БД использована библиотека **Prisma**.
+
+Призма установлена в качестве dev-зависимостей:  
+_(команды приводимые ниже указаны для удобства развертывания нового проекта по аналогии)_
+
+```sh
+npm i prisma --save-dev
+```
+
+Для настройки конфигурации Призмы использована схема:
+
+```sh
+npx prisma init --datasource-provider sqlite
+```
+
+Для создания реляционной БД использована опция `migration` в Prisma:
+
+```sh
+npx prisma migrate dev --name init
+```
+
+Установлен клиент Призмы:
+
+```sh
+npm i @prisma/client
+```
+
+---
+
+Для **хеширования** паролей использована функция-алгоритм **bcrypt** (обязательно версия _bcrypt@5.1.0_ - последняя на момент написания кода версия 5.1.1 крашится при установке npm-пакета!).  
+_hint для установки:_
+
+```sh
+npm i bcrypt@5.1.0
+```
+
+Для типизации библиотеки хеширования не забываем установить типы:
+
+```sh
+npm i --save-dev @types/bcrypt
+```
+
+---
+
+Для генерации **JWT** `access token`'а использована библиотека **jsonwebtoken** .  
+_hint для установки:_
+
+```sh
+npm i jsonwebtoken
+```
+
+Для типизации библиотеки jsonwebtoken не забываем установить типы:
+
+```sh
+npm i --save-dev @types/jsonwebtoken
+```

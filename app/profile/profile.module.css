@@ -1,0 +1,23 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.avatar {
+  /* display: inline-block;
+  object-fit: cover;
+  width: auto; */
+  max-height: 15vh;
+}
+
+.item {
+  text-align: center;
+  width: 100%;
+}
+
+.item > h2 {
+  color: var(--color-active);
+}

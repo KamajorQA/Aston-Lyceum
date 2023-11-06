@@ -3,16 +3,16 @@ import { PostList } from '@/components/PostList/PostList';
 import { Search } from '@/components/Search/Search';
 
 export const metadata: Metadata = {
-  title: 'Blog | My NextJS Blog',
-  description: 'List of blog articles',
+  title: 'Auditorium | Aston Lyceum',
+  description: 'List of provided instructions',
 };
 
-export default function Blog() {
+export default function Auditorium() {
   return (
-    <>
-      <h1>Blog posts</h1>
+    <section>
+      <h1>Instruction posts</h1>
       <Search />
       <PostList />
-    </>
+    </section>
   );
 }

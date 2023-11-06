@@ -1,0 +1,32 @@
+.wrapper {
+  align-self: center;
+}
+
+.authGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 23rem;
+  border-radius: 2rem;
+  padding: 1.25rem 2rem;
+  background-color: var(--accent-bg-color);
+}
+
+.divider {
+  border: 0;
+  border-top: 1px solid var(--color-primary);
+  overflow: visible;
+  margin: 1.5rem 0.5rem 0 0.5rem;
+  display: block;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.divider::before {
+  content: 'or';
+  position: relative;
+  top: -0.75rem;
+  color: var(--color-primary);
+  padding: 0 0.4rem;
+  background-color: var(--accent-bg-color);
+}

@@ -4,5 +4,15 @@
 }
 
 .wrapper a {
-  color: teal;
+  color: var(--color-primary);
+}
+
+.aboutNav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.5rem;
+  border-right: 1px solid var(--color-active);
+  min-width: 20vw;
+  align-items: flex-end;
 }

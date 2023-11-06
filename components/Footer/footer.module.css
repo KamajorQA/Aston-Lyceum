@@ -2,7 +2,7 @@
   min-height: 75px;
   background-color: var(--accent-bg-color);
   text-align: center;
-  color: teal;
+  color: var(--color-primary);
   border-top-right-radius: 1rem;
   border-top-left-radius: 1rem;
 }
@@ -10,6 +10,7 @@
 .copyright {
   padding: 0.5rem 0;
 }
+
 .socials {
   display: flex;
   justify-content: center;
