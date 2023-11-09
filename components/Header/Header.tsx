@@ -1,7 +1,8 @@
+'use client';
 import { UserMenu } from '../UserMenu/UserMenu';
 import { Navigation } from '../Navigation/Navigation';
-import { getServerSession } from 'next-auth';
 import s from './header.module.css';
+import { useSession } from 'next-auth/react';
 
 const userNavItems = [
   { label: 'Home', href: '/' },
@@ -14,9 +15,9 @@ const guestNavItems = [
   { label: 'About', href: '/about' },
 ];
 
-async function Header() {
-  const session = await getServerSession();
-  const isAuth = !!session?.user;
+function Header() {
+  const { status } = useSession();
+  const isAuth = !!(status === 'authenticated');
   const navItems = isAuth ? userNavItems : guestNavItems;
 
   return (
