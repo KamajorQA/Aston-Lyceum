@@ -3,6 +3,14 @@ import GoogleProvider from 'next-auth/providers/google';
 import GithubProvider from 'next-auth/providers/github';
 import Credentials from 'next-auth/providers/credentials';
 
+let hostUrl = '';
+
+if (process.env.NODE_ENV !== 'production') {
+  hostUrl = 'http://localhost:3000';
+} else {
+  hostUrl = 'https://aston-lyceum.vercel.app';
+}
+
 const authConfig: AuthOptions = {
   providers: [
     GoogleProvider({
@@ -26,7 +34,7 @@ const authConfig: AuthOptions = {
         }
 
         // логика  поиска юзера по переданным credentials
-        const response = await fetch('http://localhost:3000/api/login', {
+        const response = await fetch(`${hostUrl}/api/login`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
