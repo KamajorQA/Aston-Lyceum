@@ -2,7 +2,6 @@ import { AuthOptions, User } from 'next-auth';
 import GoogleProvider from 'next-auth/providers/google';
 import GithubProvider from 'next-auth/providers/github';
 import Credentials from 'next-auth/providers/credentials';
-import { Session } from 'inspector';
 
 const authConfig: AuthOptions = {
   providers: [
@@ -57,7 +56,11 @@ const authConfig: AuthOptions = {
   },
   secret: process.env.NEXTAUTH_SECRET,
   callbacks: {
-    async jwt({ token, user }) {
+    async jwt({ token, user, trigger, session }) {
+      if (trigger === 'update') {
+        return { ...token, ...session.user };
+      }
+
       return { ...token, ...user };
     },
 

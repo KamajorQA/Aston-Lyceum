@@ -1,8 +1,8 @@
 # Список инструкций по настройке окружения фронта для тестирования рабочих проектов MQA-специалистами компании Aston.
 
-## Стек проекта: Next.js, React, Typescript, RTK, CSS Modules, SQLite, Prisma, bcrypt.
+## Стек проекта: Next.js, React, Typescript, RTK, CSS Modules, PostgreSQL, Prisma, bcrypt.
 
-**_Fullstack SPA-проект получения с удаленного сервера и отображения списка инструкций на фреймворке Next.js v.13 и базе данных sqlite управляемой через ORM Prisma с аутентификацией по JWT_**
+**_Fullstack SPA-проект получения с удаленного сервера и отображения списка инструкций на фреймворке Next.js v.13 и базе данных PostgreSQL управляемой через ORM Prisma с аутентификацией по JWT_**
 
 ---
 
@@ -67,7 +67,7 @@ npm i prisma --save-dev
 Для настройки конфигурации Призмы использована схема:
 
 ```sh
-npx prisma init --datasource-provider sqlite
+npx prisma init --datasource-provider postgresql
 ```
 
 Для создания реляционной БД использована опция `migration` в Prisma:

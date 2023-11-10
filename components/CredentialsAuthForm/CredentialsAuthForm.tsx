@@ -1,7 +1,7 @@
 'use client';
 import { useState, type FormEventHandler } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
-import { signIn } from 'next-auth/react';
+import { signIn, useSession } from 'next-auth/react';
 import s from './credentialsAuthForm.module.css';
 
 function CredentialsAuthForm() {
@@ -9,13 +9,13 @@ function CredentialsAuthForm() {
   const searchParams = useSearchParams();
   const callbackUrl = searchParams.get('callbackUrl') || '/profile';
   const [error, setError] = useState('');
+  const { data: sessionData, update } = useSession();
 
   const handleSubmitAuthForm: FormEventHandler<HTMLFormElement> = async (
     event
   ) => {
     event.preventDefault();
     setError('');
-
     const formData = new FormData(event.currentTarget);
 
     const res = await signIn('credentials', {
@@ -25,8 +25,8 @@ function CredentialsAuthForm() {
     });
 
     if (!!res && !res.error) {
+      await update(sessionData);
       router.push(callbackUrl);
-      setTimeout(() => window.location.reload(), 300);
     } else {
       const errMessage =
         res?.status === 401
