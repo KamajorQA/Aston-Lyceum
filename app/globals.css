@@ -139,6 +139,11 @@ a.actionButton {
   background-color: var(--color-active);
 }
 
+.smallCaps {
+  font-variant: small-caps;
+  letter-spacing: 1.1px;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

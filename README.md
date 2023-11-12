@@ -1,6 +1,6 @@
 # Список инструкций по настройке окружения фронта для тестирования рабочих проектов MQA-специалистами компании Aston.
 
-## Стек проекта: Next.js, React, Typescript, RTK, CSS Modules, PostgreSQL, Prisma, bcrypt.
+## Стек проекта: Next.js, React, Typescript, RTK, Framer Motion, CSS Modules, PostgreSQL, Prisma, bcrypt, jsonwebtoken.
 
 **_Fullstack SPA-проект получения с удаленного сервера и отображения списка инструкций на фреймворке Next.js v.13 и базе данных PostgreSQL управляемой через ORM Prisma с аутентификацией по JWT_**
 
@@ -34,6 +34,7 @@ npm run dev
 - [x] Prisma;
 - [x] bcrypt;
 - [x] jsonwebtoken;
+- [x] Framer Motion;
 - [x] react-loader-spinner;
 
 Страницы проекта являются _**серверными компонентами**_ с передаваемой **meta**-информацией для **SEO**-оптимизации.  
