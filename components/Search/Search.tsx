@@ -59,7 +59,7 @@ function Search() {
         value={searchQuery}
         onChange={handleSearchInput}
       />
-      <button type="submit">
+      <button type="submit" className="actionButton">
         {!!isLoading ? (
           <Audio
             height="15"

@@ -4,8 +4,37 @@ import styles from './page.module.css';
 export default function Home() {
   return (
     <section className={styles.main}>
-      <p>Привет тебе, мой юный падава…&nbsp;MQA-специалист!</p>
-      <div className={styles.info}>
+      <article className={`${styles.info} ${styles.infoWrap}`}>
+        <p className={styles.textBlock}>
+          Привет тебе, мой юный падава…&nbsp;MQA-специалист!
+        </p>
+        <p className={styles.textBlock}>Вестимо и тебя отправили учиться</p>
+        <div>
+          <p className={styles.textBlock}>
+            Здесь собраны&nbsp;
+            <a href={`/auditorium`} className={styles.subtleLink}>
+              инструкции
+            </a>
+          </p>
+          <p className={styles.textBlock}>
+            ...как тебе настроить окружение и развернуть вверенный тебе
+            Frontend-проект, чтобы ты мог запустить в него свои шаловливые ручки
+            еще до мержа изменений в develop-ветку.
+          </p>
+        </div>
+
+        <p className={styles.textBlock}>
+          Собранная здесь информация является общедоступной и лежит по всему
+          интернету, но меня пнул мой ПМ с наставлением, что &quot;все должно
+          быть задокументировано&quot;… Так что авторизуйся удобным способом
+          и...
+        </p>
+      </article>
+      <a href={`/auditorium`} className="actionButton">
+        поехали!
+      </a>
+
+      <article className={styles.info}>
         <div>...к слову, это fullstack проект</div>
 
         <div className={styles.center}>
@@ -41,6 +70,7 @@ export default function Home() {
           </div>
           <div>
             <a
+              className={`${styles.repoLink} ${styles.subtleLink}`}
               href="https://github.com/KamajorQA/Aston-Lyceum"
               target="_blank"
               rel="noopener noreferrer"
@@ -76,7 +106,7 @@ export default function Home() {
           <br />
           автору будет приятно :)
         </div>
-      </div>
+      </article>
     </section>
   );
 }

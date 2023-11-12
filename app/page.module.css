@@ -8,20 +8,11 @@
   flex: 1;
 }
 
-.main a {
+.repoLink {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
-}
-
-.main p {
-  position: relative;
-  margin: 0;
-  padding: 1rem;
-  background-color: rgba(var(--callout-rgb), 0.5);
-  border: 1px solid rgba(var(--callout-border-rgb), 0.3);
-  border-radius: var(--border-radius);
 }
 
 .grid {
@@ -95,6 +86,30 @@
 .infoEnd {
   align-self: flex-end;
   text-align: center;
+}
+
+.infoWrap {
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+}
+
+.textBlock {
+  position: relative;
+  margin: 0;
+  padding: 1rem;
+  background-color: rgba(var(--callout-rgb), 0.5);
+  border: 1px solid rgba(var(--callout-border-rgb), 0.3);
+  border-radius: var(--border-radius);
+}
+
+.subtleLink {
+  transition: all 400ms ease-in;
+}
+
+.subtleLink:hover {
+  opacity: 0.8;
+  color: var(--color-primary);
 }
 
 /* Mobile */
