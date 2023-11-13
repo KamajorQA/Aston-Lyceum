@@ -12,6 +12,7 @@
   --color-active: salmon;
   --accent-bg-color: rgb(182, 209, 208);
   --color-primary: teal;
+  --sky-box-shadow: 0 1px 8px 0px var(--accent-bg-color);
 
   --primary-glow: conic-gradient(
     from 180deg at 50% 50%,
@@ -142,6 +143,34 @@ a.actionButton {
 .smallCaps {
   font-variant: small-caps;
   letter-spacing: 1.1px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem 4rem;
+  flex: 1;
+}
+
+.codeBlock {
+  position: relative;
+  margin: 0.5rem 0 1rem;
+  padding: 1.5rem 4rem;
+  background-color: rgba(var(--callout-rgb), 0.5);
+  border: 1px solid rgba(var(--callout-border-rgb), 0.3);
+  border-radius: var(--border-radius);
+  transition: all 400ms ease-in;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.codeBlock:hover {
+  opacity: 0.8;
+  box-shadow: var(--sky-box-shadow);
 }
 
 @media (prefers-color-scheme: dark) {

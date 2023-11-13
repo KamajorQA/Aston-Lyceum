@@ -22,7 +22,7 @@ npm run dev
 
 ### Автоматический деплой реализован на Vercel.
 
-**_Ссылка на продакшн стенд: [next-base-app](https://next-base-app-wine.vercel.app/)_**
+**_Ссылка на продакшн стенд: [Aston Lyceum](https://next-base-app-wine.vercel.app/)_**
 
 ---
 

@@ -26,6 +26,10 @@
   transition: all 400ms ease-in;
 }
 
+.textBlock:hover {
+  box-shadow: var(--sky-box-shadow);
+}
+
 .subtleLink {
   transition: all 400ms ease-in;
 }
