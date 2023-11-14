@@ -27,10 +27,6 @@ export default async function Post({ params: { id } }: Props) {
   return (
     <article>
       <h1>{post.title}</h1>
-      <p>{post.content}</p>
-      <br />
-      <hr />
-      <br />
       <div className="content" dangerouslySetInnerHTML={articleTextHTML}></div>
     </article>
   );

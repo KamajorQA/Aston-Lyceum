@@ -6,13 +6,7 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'cs.sberuniversity.online',
         port: '',
-        pathname: '/image/1000/auto/upsize/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'cs.sberuniversity.online',
-        port: '',
-        pathname: '/image/full/**',
+        pathname: '/image/**',
       },
       {
         protocol: 'https',

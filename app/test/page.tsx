@@ -1,3 +1,4 @@
+/* eslint-disable */
 'use client';
 import { useEffect } from 'react';
 import ReactDOMServer from 'react-dom/server';
@@ -24,7 +25,7 @@ export default function Test({ params: { id } }: Props) {
 
   return (
     <article>
-      <h1>Установка Node.js + NPM</h1>
+      <h1>Установка Visual Studio Code</h1>
       <div id="rural" className={s.content}>
         <TestingContent />
       </div>

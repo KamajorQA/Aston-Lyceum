@@ -1,5 +1,3 @@
-// const baseUrl = 'https://jsonplaceholder.typicode.com/posts';
-
 let baseUrl = '';
 
 if (process.env.NODE_ENV !== 'production') {
@@ -9,7 +7,6 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 async function getAllPosts() {
-  // const response = await fetch(baseUrl, {
   const response = await fetch('/api/instructions', {
     next: {
       revalidate: 3600,
@@ -24,10 +21,9 @@ async function getAllPosts() {
 }
 
 async function getSinglePostData(id: string) {
-  // const response = await fetch(`${baseUrl}/${id}`, {
   const response = await fetch(`${baseUrl}/api/instructions/${id}`, {
     next: {
-      revalidate: 30,
+      revalidate: 3600,
     },
   });
 
