@@ -24,7 +24,7 @@ export default function Test({ params: { id } }: Props) {
 
   return (
     <article>
-      <h1>Введение в Git</h1>
+      <h1>Установка SSH-ключей</h1>
       <div id="rural" className={s.content}>
         <TestingContent />
       </div>
