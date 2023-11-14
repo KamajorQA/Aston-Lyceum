@@ -7,8 +7,6 @@ interface IParams {
   };
 }
 export function GET(request: Request, { params }: IParams) {
-  const { searchParams } = new URL(request.url);
-
   const instructionId = +params.id;
 
   const currentInstruction = instructionsList.find(
