@@ -20,6 +20,12 @@ const nextConfig = {
         port: '',
         pathname: '/media/articles/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'nodejsdev.ru',
+        port: '',
+        pathname: '/guides/**',
+      },
     ],
   },
 };

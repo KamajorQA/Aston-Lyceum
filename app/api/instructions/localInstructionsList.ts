@@ -54,4 +54,21 @@ export const instructionsList = [
     author: 'Kamajor',
     authorId: 0,
   },
+  {
+    id: 7,
+    title: 'Установка Node.js + NPM',
+    content:
+      '<p> Чтобы запустить проект, который написан на React (это JavaScript библиотека, на которой и пишет наша фронтенд команда) нужно еще некоторое окружение. А именно&nbsp;<strong>Node.js</strong>. </p> <p> <strong>Node.js</strong>&nbsp;- это среда выполнения кода JavaScript. </p> <p> Кроме этого, при установке Node.js устанавливается и&nbsp; <strong>NPM</strong>&nbsp;-&nbsp;<em>Node Package Manager</em>, т.е. менеджер пакетов, входящий в состав Node.js. Именно с помощью NPM вы будете устанавливать необходимые зависимости (пакеты) проекта </p> <p> Если в дальнейшем потребуется поставить какой-то отдельный/дополнительный пакет, то это делается командой: </p> <pre class="codeBlock"> <code>npm install &lt;packagename&gt;</code> </pre> <p> Перед тем как что-то устанавливать стоит запустить снова свой терминал (для MacOS -<strong>Terminal</strong>, а для Windows - или уже установленный нами&nbsp;<strong>Git Bash</strong>, или же предустановленный&nbsp; <strong>Powershell</strong>) </p> <p> И в терминале необходимо ввести команду</p> <pre class="codeBlock"> <code>node --version</code> </pre> <p> Это команда позволит проверить, нет ли уже в вашей системе ранее установленной версии Node.js. Если платформа уже установлена, то отобразится его версия: </p> <Image src="https://nodejsdev.ru/guides/webdraftt/setup-2.png" alt="Git_Win_1" width="608" height="60" /> <p> <strong>Важно</strong>, чтобы версия установленного Node.js была не ниже&nbsp; <strong>14.0.0+</strong> </p> <p> Это ограничение библиотеки React для корректной работы. В том числе данное ограничение означает, что проект <strong>не получится запустить</strong> на Windows 7 (ну и, разумеется, ниже...&nbsp; <em> и для справки отмечу, что есть под семерку все-таки один заковыристый танец с бубном, но даже он будет работать весьма условно и ограниченно </em> ). </p> <p> Если вы не видите версии Node.js, то его необходимо установить. Для чего переходим на сайт: <em> <a href="https://nodejs.org/en" target="_blank" rel="noopener"> nodejs.org </a> </em> . </p> <p> И сразу на главной странице из двух предлагаемых вариантов выбираем рекомендуемую (<strong>LTS</strong>) версию под свою ОС и устанавливаем ее. Процесс установки стандартный, так что справишься без дополнительных подсказок. Я верю в тебя! </p> <p>После установки снова вводим в терминал команду для проверки версии</p> <pre class="codeBlock"> <code>node --version</code> </pre> <p> Также для проверки того, что вместе с Node.js корректно установился и NPM можно ввести команду </p> <pre class="codeBlock"> <code>npm --version</code> </pre> <p>Если видишь результат, значит ты молодец!</p>',
+    published: true,
+    author: 'Kamajor',
+    authorId: 0,
+  },
+  {
+    id: 8,
+    title: 'Установка Visual Studio Code',
+    content: '',
+    published: true,
+    author: 'Kamajor',
+    authorId: 0,
+  },
 ];

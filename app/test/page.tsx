@@ -24,7 +24,7 @@ export default function Test({ params: { id } }: Props) {
 
   return (
     <article>
-      <h1>Добавление SSH-ключей в GitLab</h1>
+      <h1>Установка Node.js + NPM</h1>
       <div id="rural" className={s.content}>
         <TestingContent />
       </div>
