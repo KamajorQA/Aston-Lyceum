@@ -1,5 +1,7 @@
 import { getSinglePostData } from '@/services/getPosts';
 import { Metadata } from 'next';
+// eslint-disable-next-line no-unused-vars
+import Image from 'next/image';
 
 type Props = {
   params: {
@@ -20,11 +22,12 @@ export async function generateMetadata({
 
 export default async function Post({ params: { id } }: Props) {
   const post = await getSinglePostData(id);
+  const articleTextHTML = { __html: post.content };
 
   return (
     <article>
       <h1>{post.title}</h1>
-      <p>{post.body}</p>
+      <div className="content" dangerouslySetInnerHTML={articleTextHTML}></div>
     </article>
   );
 }

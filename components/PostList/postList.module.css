@@ -1,11 +1,23 @@
 .content li {
-  list-style-type: clef;
+  list-style-type: filledBullet;
+  transition: all 400ms ease-in;
 }
 
-@counter-style clef {
+@counter-style filledBullet {
   system: cyclic;
-  symbols: '\1D11E';
-  suffix: ' \227B  ';
+  symbols: '\0025B8';
+  suffix: ' ';
+}
+
+.content li:hover {
+  list-style-type: hollowBullet;
+  color: teal;
+}
+
+@counter-style hollowBullet {
+  system: cyclic;
+  symbols: '\0025B9';
+  suffix: ' ';
 }
 
 .content a {

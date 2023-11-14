@@ -1,9 +1,15 @@
-const baseUrl = 'https://jsonplaceholder.typicode.com/posts';
+let baseUrl = '';
+
+if (process.env.NODE_ENV !== 'production') {
+  baseUrl = 'http://localhost:3000';
+} else {
+  baseUrl = 'https://aston-lyceum.vercel.app';
+}
 
 async function getAllPosts() {
-  const response = await fetch(baseUrl, {
+  const response = await fetch('/api/instructions', {
     next: {
-      revalidate: 60,
+      revalidate: 3600,
     },
   });
 
@@ -15,9 +21,9 @@ async function getAllPosts() {
 }
 
 async function getSinglePostData(id: string) {
-  const response = await fetch(`${baseUrl}/${id}`, {
+  const response = await fetch(`${baseUrl}/api/instructions/${id}`, {
     next: {
-      revalidate: 60,
+      revalidate: 3600,
     },
   });
 
@@ -29,7 +35,8 @@ async function getSinglePostData(id: string) {
 }
 
 const getPostsBySearch = async (searchQuery: string) => {
-  const response = await fetch(`${baseUrl}?q=${searchQuery}`);
+  // const response = await fetch(`${baseUrl}?q=${searchQuery}`);
+  const response = await fetch(`${baseUrl}/api/instructions?q=${searchQuery}`);
 
   if (!response.ok) {
     throw new Error('Server error: unable to fetch requested posts');
