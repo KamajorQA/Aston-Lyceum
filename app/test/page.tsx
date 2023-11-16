@@ -25,7 +25,7 @@ export default function Test({ params: { id } }: Props) {
 
   return (
     <article>
-      <h1>Установка Visual Studio Code</h1>
+      <h1>Клонирование Git-репозитория</h1>
       <div id="rural" className={s.content}>
         <TestingContent />
       </div>

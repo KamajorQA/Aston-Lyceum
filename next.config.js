@@ -20,6 +20,12 @@ const nextConfig = {
         port: '',
         pathname: '/guides/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'losst.pro',
+        port: '',
+        pathname: '/wp-content/**',
+      },
     ],
   },
 };
