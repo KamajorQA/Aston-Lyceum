@@ -155,6 +155,13 @@ a.actionButton {
   flex: 1;
 }
 
+.content a {
+  transition: all 400ms ease-in;
+}
+.content a:hover {
+  color: var(--color-primary);
+}
+
 .codeBlock {
   position: relative;
   margin: 0.5rem 0 1rem;
