@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { El_Messiri } from 'next/font/google';
+import { Analytics } from '@vercel/analytics/react';
 import { ReduxProvider } from '@/redux/ReduxProvider';
 import Providers from '@/components/Providers';
 import { Header } from '@/components/Header/Header';
@@ -27,6 +28,7 @@ export default function RootLayout({
             <ReduxProvider>{children}</ReduxProvider>
           </main>
           <Footer />
+          <Analytics />
         </Providers>
       </body>
     </html>
