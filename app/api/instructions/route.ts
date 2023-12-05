@@ -1,8 +1,10 @@
 import { NextResponse } from 'next/server';
-import { instructionsList } from './localInstructionsList';
+import prisma from '@/lib/prisma';
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
+
+  const instructionsList = await prisma.post.findMany();
 
   const query = searchParams.get('q');
 
